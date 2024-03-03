@@ -3,6 +3,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 import {
   LoginLink,
@@ -12,10 +13,17 @@ import {
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { MenuIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { createAirbnbHome } from "../actions";
 
 export async function UserNav() {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
+
+  const createHomeWithId = createAirbnbHome.bind(null, {
+    userId: user?.id as string
+  })
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
@@ -36,6 +44,23 @@ export async function UserNav() {
       <DropdownMenuContent align="end" className="w-[200px]">
         {user ? (
           <>
+            <DropdownMenuItem>
+              <form action={createHomeWithId} className="w-full">
+                <button type="submit" className="w-full text-start">
+                  Airbnb your Home
+                </button>
+              </form>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href="/my-homes" className="w-full">My Listings</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href="/favourites" className="w-full">My Favourites</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href="/reservations" className="w-full">My Reservations</Link>
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
             <DropdownMenuItem>
               <LogoutLink>Logout</LogoutLink>
             </DropdownMenuItem>

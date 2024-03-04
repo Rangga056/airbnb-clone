@@ -2,8 +2,12 @@
 
 import { redirect } from "next/navigation"
 import prisma from "./lib/db"
+import { supabase } from "./lib/supabase"
+import { warn } from "console"
 
 export async function createAirbnbHome({ userId }: { userId: string }) {
+  console.log("shoudld be redirecting")
+
   const data = await prisma.home.findFirst({
     where: {
       userId: userId,
@@ -14,12 +18,12 @@ export async function createAirbnbHome({ userId }: { userId: string }) {
   })
 
   if (data === null) {
+
     const data = await prisma.home.create({
       data: {
         userId: userId
       }
     })
-    // console.log("shoudld be redirecting")
     return redirect(`/create/${data.id}/structure`)
   } else if (!data.addedCategory && !data.addedDescription && !data.addedLocation) {
     return redirect(`/create/${data.id}/structure`)
@@ -43,3 +47,38 @@ export async function createCategoryPage(formData: FormData) {
   return redirect(`/create/${homeId}/description`)
 }
 
+export async function CreateDescription(formData: FormData) {
+  const title = formData.get("title") as string
+  const description = formData.get("description ") as string
+  const price = formData.get("price")
+  const imageFile = formData.get("image") as File
+  const homeId = formData.get("homeId") as string
+
+  const guestNumber = formData.get("guest") as string
+  const roomNumber = formData.get("room") as string
+  const bathroomNumber = formData.get("bathroom") as string
+
+  const { data: imageData } = await supabase.storage
+    .from("images")
+    .upload(`${imageFile.name}-${new Date()}`, imageFile, {
+      cacheControl: "2592000",
+      contentType: "image/png"
+    })
+  const data = await prisma.home.update({
+    where: {
+      id: homeId,
+    },
+    data: {
+      title: title,
+      description: description,
+      price: Number(price),
+      bedrooms: roomNumber,
+      bathrooms: bathroomNumber,
+      guests: guestNumber,
+      photo: imageData?.path,
+      addedDescription: true,
+    }
+  })
+
+  return redirect(`/create/${homeId}/address`)
+}

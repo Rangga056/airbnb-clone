@@ -1,22 +1,28 @@
-"use client"
+"use client";
 
-import { Card, CardHeader } from "@/components/ui/card"
-import { categoryItems } from "../lib/categoryItems"
-import Image from "next/image"
-import { useState } from "react"
+import { Card, CardHeader } from "@/components/ui/card";
+import { categoryItems } from "../lib/categoryItems";
+import Image from "next/image";
+import { useState } from "react";
 
 const SelectCategory = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string | undefined>(undefined)
+  const [selectedCategory, setSelectedCategory] = useState<string | undefined>(
+    undefined,
+  );
   return (
-    <div className="grid grid-cols-4 gap-8 mt-10 w-3/5 mx-auto mb-36">
-      <input type="hidden" name="categoryName" value={selectedCategory as string} />
+    <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-8 mt-10 w-3/5 mx-auto mb-36 justify-center">
+      <input
+        type="hidden"
+        name="categoryName"
+        value={selectedCategory as string}
+      />
       {categoryItems.map((item) => (
         <div key={item.id} className="cursor-pointer">
           <Card
             className={selectedCategory === item.name ? "border-primary" : ""}
             onClick={() => setSelectedCategory(item.name)}
           >
-            <CardHeader>
+            <CardHeader className="flex flex-col items-center justify-center text-center">
               <Image
                 src={item.imageUrl}
                 alt={item.name}
@@ -30,7 +36,7 @@ const SelectCategory = () => {
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default SelectCategory
+export default SelectCategory;

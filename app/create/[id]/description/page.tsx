@@ -1,12 +1,12 @@
-import { CreateDescription } from "@/app/actions"
-import Counter from "@/app/components/Counter"
-import CreationBottomBar from "@/app/components/CreationBottomBar"
-import { Card, CardHeader } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
+import { CreateDescription } from "@/app/actions";
+import Counter from "@/app/components/Counter";
+import CreationBottomBar from "@/app/components/CreationBottomBar";
+import { Card, CardHeader } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
-const DescriptionPage = ({ params }: { params: { id: string }}) => {
+const DescriptionPage = ({ params }: { params: { id: string } }) => {
   return (
     <>
       <div className="w-3/5 mx-auto">
@@ -50,7 +50,9 @@ const DescriptionPage = ({ params }: { params: { id: string }}) => {
 
           <div className="flex flex-col gap-2">
             <Label>Image</Label>
-            <span className="text-gray-500 text-sm">Choose or drop the image</span>
+            <span className="text-gray-500 text-sm">
+              Choose or drop the image
+            </span>
             <Input
               name="image"
               type="file"
@@ -64,7 +66,9 @@ const DescriptionPage = ({ params }: { params: { id: string }}) => {
               <div className="flex items-center justify-between">
                 <div className="flex flex-col">
                   <h3 className="underline font-medium">Guests</h3>
-                  <p className="text-muted-foreground text-sm">How many guests do you want?</p>
+                  <p className="text-muted-foreground text-sm">
+                    How many guests do you want?
+                  </p>
                 </div>
                 <Counter name="guest" />
               </div>
@@ -72,7 +76,9 @@ const DescriptionPage = ({ params }: { params: { id: string }}) => {
               <div className="flex items-center justify-between">
                 <div className="flex flex-col">
                   <h3 className="underline font-medium">Rooms</h3>
-                  <p className="text-muted-foreground text-sm">How many rooms do you have?</p>
+                  <p className="text-muted-foreground text-sm">
+                    How many rooms do you have?
+                  </p>
                 </div>
                 <Counter name="room" />
               </div>
@@ -80,7 +86,9 @@ const DescriptionPage = ({ params }: { params: { id: string }}) => {
               <div className="flex items-center justify-between">
                 <div className="flex flex-col">
                   <h3 className="underline font-medium">Bathrooms</h3>
-                  <p className="text-muted-foreground text-sm">How many bathrooms do you have?</p>
+                  <p className="text-muted-foreground text-sm">
+                    How many bathrooms do you have?
+                  </p>
                 </div>
                 <Counter name="bathroom" />
               </div>
@@ -91,7 +99,7 @@ const DescriptionPage = ({ params }: { params: { id: string }}) => {
         <CreationBottomBar />
       </form>
     </>
-  )
-}
+  );
+};
 
-export default DescriptionPage  
+export default DescriptionPage;

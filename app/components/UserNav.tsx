@@ -21,8 +21,8 @@ export async function UserNav() {
   const user = await getUser();
 
   const createHomeWithId = createAirbnbHome.bind(null, {
-    userId: user?.id as string
-  })
+    userId: user?.id as string,
+  });
 
   return (
     <DropdownMenu>
@@ -52,13 +52,19 @@ export async function UserNav() {
               </form>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Link href="/my-homes" className="w-full">My Listings</Link>
+              <Link href="/my-homes" className="w-full">
+                My Listings
+              </Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Link href="/favourites" className="w-full">My Favourites</Link>
+              <Link href="/favourites" className="w-full">
+                My Favourites
+              </Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Link href="/reservations" className="w-full">My Reservations</Link>
+              <Link href="/reservations" className="w-full">
+                My Reservations
+              </Link>
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem>

@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Loader2 } from "lucide-react"
-import { useFormStatus } from "react-dom"
+import { Button } from "@/components/ui/button";
+import { Heart, Loader2 } from "lucide-react";
+import { useFormStatus } from "react-dom";
 
 const SubmitButtons = () => {
-  const { pending } = useFormStatus()
+  const { pending } = useFormStatus();
   return (
     <>
       {pending ? (
@@ -14,10 +14,33 @@ const SubmitButtons = () => {
           Please Wait
         </Button>
       ) : (
-        <Button type="submit" size="lg">Next</Button>
+        <Button type="submit" size="lg">
+          Next
+        </Button>
       )}
     </>
-  )
-}
+  );
+};
 
-export default SubmitButtons  
+export default SubmitButtons;
+
+export function AddToFavouriteButton() {
+  const { pending } = useFormStatus();
+
+  return (
+    <>
+      {pending ? (
+        <div></div>
+      ) : (
+        <Button
+          variant="outline"
+          size="icon"
+          className="bg-primary-foreground"
+          type="submit"
+        >
+          <Heart className="h-4 w-4" />
+        </Button>
+      )}
+    </>
+  );
+}

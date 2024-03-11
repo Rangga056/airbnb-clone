@@ -62,7 +62,10 @@ async function ShowItems({
   return (
     <>
       {data.length === 0 ? (
-        <NoItem />
+        <NoItem
+          title="Sorry no listings found for this category..."
+          description="Please check another category or create your own listing!"
+        />
       ) : (
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-8 mt-8">
           {data.map((item) => (
@@ -73,6 +76,10 @@ async function ShowItems({
               location={item.country as string}
               price={item.price as number}
               userId={user?.id}
+              favouriteId={item.Favourite[0]?.id}
+              isInFavourite={item.Favourite.length > 0 ? true : false}
+              homeId={item.id}
+              pathname="/"
             />
           ))}
         </div>
@@ -84,6 +91,7 @@ async function ShowItems({
 function SkeletonLoading() {
   return (
     <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-8 mt-8">
+      <SkeletonCard />
       <SkeletonCard />
       <SkeletonCard />
       <SkeletonCard />

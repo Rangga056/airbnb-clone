@@ -3,6 +3,7 @@
 import { redirect } from "next/navigation";
 import prisma from "./lib/db";
 import { supabase } from "./lib/supabase";
+import { revalidatePath } from "next/cache";
 
 export async function createAirbnbHome({ userId }: { userId: string }) {
   const data = await prisma.home.findFirst({
@@ -127,4 +128,35 @@ export async function CreateLocation(formData: FormData) {
   }
 
   return redirect("/");
+}
+
+export async function AddToFavourite(formData: FormData) {
+  const homeId = formData.get("homeId") as string;
+  const userId = formData.get("userId") as string;
+  const pathname = formData.get("pathname") as string;
+
+  // eslint-disable-next-line no-unused-vars
+  const data = await prisma.favourite.create({
+    data: {
+      homeId: homeId,
+      userId: userId,
+    },
+  });
+
+  revalidatePath(pathname);
+}
+
+export async function DeleteFromFavourite(formData: FormData) {
+  const favouriteId = formData.get("favouriteId") as string;
+  const pathname = formData.get("pathname") as string;
+  const userId = formData.get("userId") as string;
+
+  // eslint-disable-next-line no-unused-vars
+  const data = await prisma.favourite.delete({
+    where: {
+      id: favouriteId,
+      userId: userId,
+    },
+  });
+  revalidatePath(pathname);
 }

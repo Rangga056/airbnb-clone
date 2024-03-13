@@ -54,7 +54,13 @@ export default function Home({
 async function ShowItems({
   searchParams,
 }: {
-  searchParams?: { filter?: string };
+  searchParams?: {
+    filter?: string;
+    country?: string;
+    guest?: string;
+    room?: string;
+    bathroom?: string;
+  };
 }) {
   const { getUser } = getKindeServerSession();
   const user = await getUser();

@@ -54,7 +54,7 @@ const HomeRoute = async ({ params }: { params: { id: string } }) => {
   return (
     <div className="w-[75%] mx-auto mt-10 mb-12">
       <h1 className="font-medium text-2xl mb-5">{data?.title}</h1>
-      <div className="relative h-[500px]">
+      <div className="relative h-[300px] md:h-[500px]">
         <Image
           src={`https://jdlsedqvzhcpxxzkkgxo.supabase.co/storage/v1/object/public/images/${data?.photo}`}
           alt="Image of home"
@@ -63,8 +63,8 @@ const HomeRoute = async ({ params }: { params: { id: string } }) => {
         />
       </div>
 
-      <div className="flex justify-between gap-x-24 mt-8">
-        <div className="w-2/3">
+      <div className="flex md:flex-row flex-col justify-between gap-y-6 md:gap-x-24 mt-8">
+        <div className="md:w-2/3 w-full">
           <h3 className="text-xl font-medium">
             {country?.flag} {country?.label} / {country?.region}
           </h3>
@@ -107,12 +107,16 @@ const HomeRoute = async ({ params }: { params: { id: string } }) => {
           <input type="hidden" name="userId" value={user?.id} />
           <SelectCalendar reservation={data?.Reservation} />
 
-          {user?.id ? (
-            <ReservationSubmitButton />
-          ) : (
-            <Button className="w-full" asChild>
-              <Link href="/api/auth/login">Make a Reservation</Link>
-            </Button>
+          {user?.id && (
+            <>
+              {user?.id ? (
+                <ReservationSubmitButton />
+              ) : (
+                <Button className="w-full" asChild>
+                  <Link href="/api/auth/login">Make a Reservation</Link>
+                </Button>
+              )}
+            </>
           )}
         </form>
       </div>

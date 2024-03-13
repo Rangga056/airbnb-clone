@@ -1,18 +1,19 @@
-"use client"
+"use client";
 
-import { MapContainer, TileLayer, Marker } from "react-leaflet"
-import "leaflet/dist/leaflet.css"
-import { useCountries } from "../lib/getCountry"
-import { Icon, icon } from "leaflet"
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import { useCountries } from "../lib/getCountry";
+import { icon } from "leaflet";
 
 const markerIcon = icon({
-  iconUrl: "https://images.vexels.com/media/users/3/131261/isolated/preview/b2e48580147ca0ed3f970f30bf8bb009-karten-standortmarkierung.png",
-  iconSize: [50, 50]
-})
+  iconUrl:
+    "https://images.vexels.com/media/users/3/131261/isolated/preview/b2e48580147ca0ed3f970f30bf8bb009-karten-standortmarkierung.png",
+  iconSize: [50, 50],
+});
 
 const Map = ({ locationValue }: { locationValue: string }) => {
-  const { getCountryByValue } = useCountries()
-  const latLang = getCountryByValue(locationValue)?.latlang
+  const { getCountryByValue } = useCountries();
+  const latLang = getCountryByValue(locationValue)?.latlang;
   return (
     <MapContainer
       scrollWheelZoom={false}
@@ -26,7 +27,7 @@ const Map = ({ locationValue }: { locationValue: string }) => {
       />
       <Marker position={latLang ?? [-6.2, 106.8]} icon={markerIcon} />
     </MapContainer>
-  )
-}
+  );
+};
 
-export default Map
+export default Map;

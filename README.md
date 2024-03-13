@@ -1,3 +1,44 @@
+## Airbnb clone
+
+# Airbnb Clone Project
+
+This project is an Airbnb clone aimed at providing a platform for users to list, discover, and book accommodations worldwide. Built with modern web technologies, it offers features similar to the original Airbnb website, including user authentication, property listings, search functionality, booking management, and more. [click here](https://airbnb-clone-ebon-nine.vercel.app/) to visit the website.
+
+## About
+
+This Aribnb Clone project is built using Next.js, a popular React framework for building modern web applications. It's designed to be minimalistic, user-friendly, and responsive across various devices.
+
+## Features
+
+- **User Authentication**: Users can sign up, log in, and manage their profiles securely.
+- **Property Listings**: Hosts can list their properties with detailed descriptions, photos, amenities, and pricing.
+- **Search Functionality**: Users can search for accommodations based on various criteria such as country location, guests number, and the number of rooms.
+- **Booking Management**: Users can choose the date range to book the listing.
+- **Responsive Design**: The application is designed to be accessible and user-friendly across various devices, including desktops, tablets, and smartphones.
+
+
+## Project Screen Shot(s)
+![Home Page](https://github.com/Rangga056/airbnb-clone/assets/136163122/d7f64e59-450c-403c-b068-71db1b6c6d4a)
+![Individual Listing Page](https://github.com/Rangga056/airbnb-clone/assets/136163122/9ebb2d30-cf21-437b-b857-fc2926877d7a)
+![Create Listing Category](https://github.com/Rangga056/airbnb-clone/assets/136163122/969a7456-68e2-4357-aaf8-93ae5a0e569a)
+
+![Create Listing Description](https://github.com/Rangga056/airbnb-clone/assets/136163122/9e40b88b-cf48-4b47-bcf8-6e88ef3c9a24)
+![Create Listing Location](https://github.com/Rangga056/airbnb-clone/assets/136163122/80f16d22-05d6-46db-9f5d-8812df62417a)
+
+## Technologies Used
+
+- **Next.js**: Framework for building React applications.
+- **React**: JavaScript library for building user interfaces.
+- **CSS Modules**: For styling components with scoped styles.
+- **TailwindCSS**: Utility-first CSS framework.
+- **Kinde**: Powerful user authentication that integrates in minutes.
+-**Shadcn**: Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.
+- **React Day Picker**: A date picker component for React. Renders a monthly calendar to select days. DayPicker is customizable, works great with input fields and can be styled to match any design.
+- **Leaflet**: The leading open-source JavaScript library for mobile-friendly interactive maps.
+- **Vercel**: Platform for deploying serverless functions and static sites.
+
+## Installation and Setup Instructions
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -34,3 +75,20 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Reflection
+
+- Context: This project is part of my ongoing exploration of web development technologies and was undertaken during my study at Universitas Nasional.
+
+- Objective: The main goal was to build an application that simplifies event management, enabling users to create and participate in events
+
+- Challenges: Managing event details and implementing ticket purchasing functionality presented challenges. I invested time in researching these aspects to ensure a robust and efficient solution.
+
+- Unexpected Obstacles: Adapting the project to accommodate ticket purchasing and ensuring a seamless user experience posed unexpected challenges.
+
+- Tooling: I chose Next.js 14 for its improved performance and TypeScript support. Tailwind CSS provides a utility-first approach for styling, while MongoDB serves as the backend database. Vercel simplifies deployment, Shadcn beautiful, accessible, and customizable, Stripe for the payment gateaway, and Clerk handles the user authentication.
+
+At the end of the day, the technologies implemented in this project are React, Next JS 14, Typescript, MongoDB, Clerk, Shadcn, Stripe and a significant amount of VanillaJS, JSX/TSX, and TailwindCSS.
+
+## License
+This project is licensed under the [MIT License](LICENSE).

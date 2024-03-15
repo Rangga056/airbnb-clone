@@ -16,8 +16,8 @@ This Aribnb Clone project is built using Next.js, a popular React framework for 
 - **Booking Management**: Users can choose the date range to book the listing.
 - **Responsive Design**: The application is designed to be accessible and user-friendly across various devices, including desktops, tablets, and smartphones.
 
-
 ## Project Screen Shot(s)
+
 ![Home Page](https://github.com/Rangga056/airbnb-clone/assets/136163122/d7f64e59-450c-403c-b068-71db1b6c6d4a)
 ![Individual Listing Page](https://github.com/Rangga056/airbnb-clone/assets/136163122/9ebb2d30-cf21-437b-b857-fc2926877d7a)
 ![Create Listing Category](https://github.com/Rangga056/airbnb-clone/assets/136163122/969a7456-68e2-4357-aaf8-93ae5a0e569a)
@@ -32,9 +32,9 @@ This Aribnb Clone project is built using Next.js, a popular React framework for 
 - **CSS Modules**: For styling components with scoped styles.
 - **TailwindCSS**: Utility-first CSS framework.
 - **Kinde**: Powerful user authentication that integrates in minutes.
--**Supabase**: An open source Firebase alternative.
--**Prisma**: Open source Node.js and TypeScript ORM with a readable data model, automated migrations, type-safety, and auto-completion.
--**Shadcn**: Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.
+- **Supabase**: An open source Firebase alternative.
+- **Prisma**: Open source Node.js and TypeScript ORM with a readable data model, automated migrations, type-safety, and auto-completion.
+- **Shadcn**: Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.
 - **React Day Picker**: A date picker component for React. Renders a monthly calendar to select days. DayPicker is customizable, works great with input fields and can be styled to match any design.
 - **Leaflet**: The leading open-source JavaScript library for mobile-friendly interactive maps.
 - **Vercel**: Platform for deploying serverless functions and static sites.
@@ -90,8 +90,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 - **Tooling:** For this project, I utilized a powerful tech stack. Next.js 14 provided enhanced performance and TypeScript support, while Tailwind CSS facilitated a utility-first approach to styling. For the backend, I leveraged Supabase, which utilizes PostgreSQL as the database, offering scalability and robustness. Prisma served as the ORM (Object-Relational Mapping), enabling seamless interaction with the database. Deployment was streamlined with Vercel, Shadcn enriched the project with beautiful and accessible components. User authentication was handled by Kinde, ensuring a secure and seamless authentication process.
 
-
 At the end of the day, the technologies implemented in this project are React, Next JS 14, Typescript, MongoDB, Clerk, Shadcn, Stripe and a significant amount of VanillaJS, JSX/TSX, and TailwindCSS.
 
 ## License
+
 This project is licensed under the [MIT License](LICENSE).

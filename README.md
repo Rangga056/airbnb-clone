@@ -32,6 +32,8 @@ This Aribnb Clone project is built using Next.js, a popular React framework for 
 - **CSS Modules**: For styling components with scoped styles.
 - **TailwindCSS**: Utility-first CSS framework.
 - **Kinde**: Powerful user authentication that integrates in minutes.
+-**Supabase**: An open source Firebase alternative.
+-**Prisma**: Open source Node.js and TypeScript ORM with a readable data model, automated migrations, type-safety, and auto-completion.
 -**Shadcn**: Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.
 - **React Day Picker**: A date picker component for React. Renders a monthly calendar to select days. DayPicker is customizable, works great with input fields and can be styled to match any design.
 - **Leaflet**: The leading open-source JavaScript library for mobile-friendly interactive maps.
@@ -78,15 +80,16 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Reflection
 
-- Context: This project is part of my ongoing exploration of web development technologies and was undertaken during my study at Universitas Nasional.
+- **Context:** This project marks a pivotal part of my ongoing journey in web development, undertaken during my academic tenure at Universitas Nasional.
 
-- Objective: The main goal was to build an application that simplifies event management, enabling users to create and participate in events
+- **Objective:** The primary aim was to develop an application facilitating streamlined event management, empowering users to effortlessly create and participate in diverse events.
 
-- Challenges: Managing event details and implementing ticket purchasing functionality presented challenges. I invested time in researching these aspects to ensure a robust and efficient solution.
+- **Challenges:** Effectively managing event details and integrating ticket purchasing functionality posed significant hurdles. Extensive research was undertaken to devise robust and efficient solutions.
 
-- Unexpected Obstacles: Adapting the project to accommodate ticket purchasing and ensuring a seamless user experience posed unexpected challenges.
+- **Unexpected Obstacles:** Adapting the project to seamlessly incorporate ticket purchasing and ensuring an intuitive user experience presented unforeseen challenges, requiring agile problem-solving.
 
-- Tooling: I chose Next.js 14 for its improved performance and TypeScript support. Tailwind CSS provides a utility-first approach for styling, while MongoDB serves as the backend database. Vercel simplifies deployment, Shadcn beautiful, accessible, and customizable, Stripe for the payment gateaway, and Clerk handles the user authentication.
+- **Tooling:** For this project, I utilized a powerful tech stack. Next.js 14 provided enhanced performance and TypeScript support, while Tailwind CSS facilitated a utility-first approach to styling. For the backend, I leveraged Supabase, which utilizes PostgreSQL as the database, offering scalability and robustness. Prisma served as the ORM (Object-Relational Mapping), enabling seamless interaction with the database. Deployment was streamlined with Vercel, Shadcn enriched the project with beautiful and accessible components. User authentication was handled by Kinde, ensuring a secure and seamless authentication process.
+
 
 At the end of the day, the technologies implemented in this project are React, Next JS 14, Typescript, MongoDB, Clerk, Shadcn, Stripe and a significant amount of VanillaJS, JSX/TSX, and TailwindCSS.
 
